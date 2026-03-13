@@ -52,8 +52,7 @@ const HeroSection = () => {
             </a>
             <a
               href="/hardik_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Hardik_Davera_Resume.pdf"
               className="border border-primary text-primary px-6 py-3 rounded-full font-display font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
             >
               <FileDown className="w-4 h-4" />
