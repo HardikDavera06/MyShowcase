@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FileDown } from "lucide-react";
 import profileImg from "@/assets/profile-avatar.png";
 
 const HeroSection = () => {
@@ -10,16 +11,33 @@ const HeroSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-muted-foreground font-body text-lg mb-4">Hello, I'm</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-muted-foreground font-body text-lg mb-4"
+          >
+            Hello, I'm
+          </motion.p>
           <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight tracking-tight">
             Hardik
             <br />
             <span className="text-foreground/80">Davera</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-md font-body leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-6 text-lg text-muted-foreground max-w-md font-body leading-relaxed"
+          >
             At the Heart of Development is an Opportunity to Solve Problems
-          </p>
-          <div className="mt-8 flex gap-4">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="mt-8 flex gap-4 flex-wrap"
+          >
             <a
               href="mailto:daverahardik43@gmail.com"
               className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-display font-semibold hover:opacity-90 transition-opacity"
@@ -32,7 +50,16 @@ const HeroSection = () => {
             >
               View Work
             </a>
-          </div>
+            <a
+              href="/hardik_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-primary text-primary px-6 py-3 rounded-full font-display font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
+            >
+              <FileDown className="w-4 h-4" />
+              Resume
+            </a>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -42,26 +69,12 @@ const HeroSection = () => {
           className="flex flex-col items-center lg:items-end gap-6"
         >
           <div className="relative">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-card border-2 border-border overflow-hidden">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-card border-2 border-border overflow-hidden"
+            >
               <img src={profileImg} alt="Hardik Davera" className="w-full h-full object-cover" />
-            </div>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.6, type: "spring" }}
-              className="stat-bubble w-20 h-20 bg-primary text-primary-foreground absolute -top-2 -right-2 text-sm"
-            >
-              <span className="text-xl">03+</span>
-              <span className="text-[10px] font-normal">Experience</span>
-            </motion.div>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.8, type: "spring" }}
-              className="stat-bubble w-24 h-24 bg-secondary text-secondary-foreground absolute -bottom-4 -right-8 text-sm"
-            >
-              <span className="text-2xl">50+</span>
-              <span className="text-[10px] font-normal">Projects Done</span>
             </motion.div>
           </div>
         </motion.div>

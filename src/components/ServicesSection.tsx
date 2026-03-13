@@ -3,10 +3,9 @@ import { Code, Layout, Database, Globe, Server, GitBranch } from "lucide-react";
 
 const services = [
   { icon: Layout, title: "Frontend Development", desc: "HTML, CSS, Bootstrap, JavaScript — responsive and modern UIs." },
-  { icon: Server, title: "Backend Development", desc: "PHP, Laravel, CodeIgniter — robust server-side applications." },
+  { icon: Server, title: "Backend Development", desc: "PHP, Laravel — robust server-side applications." },
   { icon: Code, title: "Vue.js Apps", desc: "Interactive single-page applications with Vue.js framework." },
   { icon: Database, title: "Database Design", desc: "MySQL database architecture, optimization and management." },
-  { icon: Globe, title: "Full-Stack Web Apps", desc: "End-to-end web applications from concept to deployment." },
   { icon: GitBranch, title: "Version Control", desc: "Git & GitHub workflows for collaborative development." },
 ];
 
@@ -22,7 +21,15 @@ const ServicesSection = () => {
         >
           Digital Services I am Providing
         </motion.h2>
-        <p className="text-center text-muted-foreground mb-12 font-body">Building modern web solutions with cutting-edge technologies</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-center text-muted-foreground mb-12 font-body"
+        >
+          Building modern web solutions with cutting-edge technologies
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
@@ -32,9 +39,10 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="service-card group cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
                 <service.icon className="w-6 h-6 text-foreground" />
               </div>
               <h3 className="font-display font-bold text-lg mb-2">{service.title}</h3>

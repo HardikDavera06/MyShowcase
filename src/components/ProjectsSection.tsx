@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -7,18 +7,14 @@ const projects = [
     desc: "Full-stack employee management system with CRUD operations, authentication, and role-based access control.",
     tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "PHP", "MySQL"],
     color: "bg-secondary",
+    github: "https://github.com/HardikDavera06/TheEmployee.git",
   },
   {
-    title: "Simon Says Game",
-    desc: "Interactive sequence tracking memory game built to practice and demonstrate JavaScript concepts.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    color: "bg-primary",
-  },
-  {
-    title: "E-Commerce Store",
+    title: "Ecom",
     desc: "Small e-commerce application with product catalog, cart handling, and Stripe payment integration for seamless checkout.",
-    tech: ["React", "TypeScript", "Stripe", "Tailwind CSS"],
-    color: "bg-secondary",
+    tech: ["Vue.js", "Laravel", "MySQL"],
+    color: "bg-primary",
+    github: "https://github.com/HardikFlexgrew/LaraWithVue",
   },
 ];
 
@@ -35,7 +31,7 @@ const ProjectsSection = () => {
           Featured Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -43,17 +39,28 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
+              whileHover={{ y: -8 }}
               className="bg-background rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 group"
             >
               <div className={`h-48 ${project.color} flex items-center justify-center`}>
-                <span className="text-3xl font-display font-bold text-primary-foreground opacity-30 group-hover:opacity-60 transition-opacity">
+                <motion.span
+                  className="text-5xl font-display font-bold text-primary-foreground opacity-30 group-hover:opacity-60 transition-opacity"
+                  whileHover={{ scale: 1.2 }}
+                >
                   {project.title.charAt(0)}
-                </span>
+                </motion.span>
               </div>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-display font-bold text-xl">{project.title}</h3>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  <div className="flex items-center gap-3">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                      <Github className="w-5 h-5" />
+                    </a>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
                 <p className="text-muted-foreground font-body text-sm mb-4">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
