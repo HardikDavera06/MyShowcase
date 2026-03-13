@@ -58,7 +58,6 @@ const HeroSection = () => {
               <FileDown className="w-4 h-4" />
               Resume
             </a>
-            </a>
           </motion.div>
         </motion.div>
 
