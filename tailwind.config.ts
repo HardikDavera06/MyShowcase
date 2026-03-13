@@ -12,8 +12,20 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      display: ['Space Grotesk', 'sans-serif'],
+      body: ['Inter', 'sans-serif'],
+    },
     extend: {
       colors: {
+        lime: {
+          DEFAULT: "hsl(72, 85%, 50%)",
+          foreground: "hsl(0, 0%, 8%)",
+        },
+        emerald: {
+          DEFAULT: "hsl(152, 70%, 42%)",
+          foreground: "hsl(0, 0%, 100%)",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
