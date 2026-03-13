@@ -39,24 +39,16 @@ const HeroSection = () => {
             className="mt-8 flex gap-4 flex-wrap"
           >
             <a
-              href="mailto:daverahardik43@gmail.com"
-              className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-display font-semibold hover:opacity-90 transition-opacity"
-            >
-              Hire Me
-            </a>
-            <a
               href="#projects"
-              className="border border-foreground text-foreground px-6 py-3 rounded-full font-display font-semibold hover:bg-foreground hover:text-background transition-colors"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-display font-semibold hover:opacity-90 transition-opacity"
             >
               View Work
             </a>
             <a
-              href="/hardik_resume.pdf"
-              download="Hardik_Davera_Resume.pdf"
-              className="border border-primary text-primary px-6 py-3 rounded-full font-display font-semibold hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
+              href="#contact"
+              className="border border-foreground text-foreground px-6 py-3 rounded-full font-display font-semibold hover:bg-foreground hover:text-background transition-colors"
             >
-              <FileDown className="w-4 h-4" />
-              Resume
+              Contact Me
             </a>
           </motion.div>
         </motion.div>
