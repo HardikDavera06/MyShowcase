@@ -1,48 +1,66 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
-type ViewTransitionDocument = Document & {
-  startViewTransition?: (updateCallback: () => void) => void;
-};
-
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
+    const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
-
-    setIsDark(shouldUseDark);
-    document.documentElement.classList.toggle("dark", shouldUseDark);
+    const shouldDark = saved ? saved === "dark" : prefersDark;
+    setIsDark(shouldDark);
+    document.documentElement.classList.toggle("dark", shouldDark);
   }, []);
 
-  const applyTheme = (nextDark: boolean) => {
-    document.documentElement.classList.toggle("dark", nextDark);
-    localStorage.setItem("theme", nextDark ? "dark" : "light");
-  };
-
-  const toggleTheme = () => {
+  const toggleTheme = async () => {
     const nextDark = !isDark;
     setIsDark(nextDark);
 
-    document.documentElement.classList.add("theme-transition");
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => { ready: Promise<void> };
+    };
 
-    const doc = document as ViewTransitionDocument;
-    if (doc.startViewTransition) {
-      doc.startViewTransition(() => applyTheme(nextDark));
-    } else {
-      applyTheme(nextDark);
+    if (!doc.startViewTransition || !buttonRef.current) {
+      document.documentElement.classList.toggle("dark", nextDark);
+      localStorage.setItem("theme", nextDark ? "dark" : "light");
+      return;
     }
 
-    window.setTimeout(() => {
-      document.documentElement.classList.remove("theme-transition");
-    }, 450);
+    const rect = buttonRef.current.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const maxRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = doc.startViewTransition(() => {
+      document.documentElement.classList.toggle("dark", nextDark);
+      localStorage.setItem("theme", nextDark ? "dark" : "light");
+    });
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${maxRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 500,
+          easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        }
+      );
+    });
   };
 
   return (
     <button
+      ref={buttonRef}
       onClick={toggleTheme}
       className="relative w-10 h-10 rounded-full border border-border bg-card flex items-center justify-center overflow-hidden hover:border-primary transition-colors"
       aria-label="Toggle theme"
