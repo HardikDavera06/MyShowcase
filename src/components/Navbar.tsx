@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Services", href: "services" },
@@ -43,6 +44,7 @@ const Navbar = () => {
           >
             Resume
           </a>
+          <ThemeToggle />
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
