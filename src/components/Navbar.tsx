@@ -44,6 +44,7 @@ const Navbar = () => {
           >
             Resume
           </a>
+          <ThemeToggle />
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
