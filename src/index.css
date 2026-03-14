@@ -112,3 +112,21 @@
     @apply text-3xl md:text-4xl font-bold font-display tracking-tight;
   }
 }
+
+@layer utilities {
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+    transition-duration: 380ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition-duration: 0ms;
+  }
+}
