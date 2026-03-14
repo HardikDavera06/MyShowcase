@@ -30,7 +30,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="/hardik_resume.pdf"
+            href="./hardik_resume.pdf"
             download="Hardik_Davera_Resume.pdf"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-full font-display text-sm font-semibold hover:opacity-90 transition-opacity"
           >
