@@ -38,18 +38,18 @@ const HeroSection = () => {
             transition={{ delay: 0.7 }}
             className="mt-8 flex gap-4 flex-wrap"
           >
-            <a
-              href="#projects"
+            <button
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-display font-semibold hover:opacity-90 transition-opacity"
             >
               View Work
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-foreground text-foreground px-6 py-3 rounded-full font-display font-semibold hover:bg-foreground hover:text-background transition-colors"
             >
               Contact Me
-            </a>
+            </button>
           </motion.div>
         </motion.div>
 
