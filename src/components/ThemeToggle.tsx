@@ -1,80 +1,48 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 
+type ViewTransitionDocument = Document & {
+  startViewTransition?: (updateCallback: () => void) => void;
+};
+
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.classList.contains("dark");
-    }
-    return false;
-  });
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const shouldUseDark = savedTheme ? savedTheme === "dark" : prefersDark;
+
+    setIsDark(shouldUseDark);
+    document.documentElement.classList.toggle("dark", shouldUseDark);
   }, []);
 
+  const applyTheme = (nextDark: boolean) => {
+    document.documentElement.classList.toggle("dark", nextDark);
+    localStorage.setItem("theme", nextDark ? "dark" : "light");
+  };
+
   const toggleTheme = () => {
-    const newDark = !isDark;
+    const nextDark = !isDark;
+    setIsDark(nextDark);
 
-    // Create circular reveal overlay
-    if (buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      const x = rect.left + rect.width / 2;
-      const y = rect.top + rect.height / 2;
+    document.documentElement.classList.add("theme-transition");
 
-      // Calculate the max radius needed to cover the entire screen
-      const maxRadius = Math.hypot(
-        Math.max(x, window.innerWidth - x),
-        Math.max(y, window.innerHeight - y)
-      );
-
-      const overlay = document.createElement("div");
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.width = "100vw";
-      overlay.style.height = "100vh";
-      overlay.style.zIndex = "9999";
-      overlay.style.pointerEvents = "none";
-      overlay.style.backgroundColor = newDark ? "hsl(0, 0%, 6%)" : "hsl(60, 20%, 97%)";
-      overlay.style.clipPath = `circle(0px at ${x}px ${y}px)`;
-      overlay.style.transition = "clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-
-      document.body.appendChild(overlay);
-
-      // Trigger animation
-      requestAnimationFrame(() => {
-        overlay.style.clipPath = `circle(${maxRadius}px at ${x}px ${y}px)`;
-      });
-
-      // Apply theme mid-animation
-      setTimeout(() => {
-        if (newDark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-        localStorage.setItem("theme", newDark ? "dark" : "light");
-      }, 300);
-
-      // Remove overlay after animation
-      setTimeout(() => {
-        overlay.remove();
-      }, 650);
+    const doc = document as ViewTransitionDocument;
+    if (doc.startViewTransition) {
+      doc.startViewTransition(() => applyTheme(nextDark));
+    } else {
+      applyTheme(nextDark);
     }
 
-    setIsDark(newDark);
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 450);
   };
 
   return (
     <button
-      ref={buttonRef}
       onClick={toggleTheme}
       className="relative w-10 h-10 rounded-full border border-border bg-card flex items-center justify-center overflow-hidden hover:border-primary transition-colors"
       aria-label="Toggle theme"
