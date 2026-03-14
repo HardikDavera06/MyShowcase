@@ -4,7 +4,7 @@ import profileImg from "@/assets/profile-avatar.png";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-20">
+    <section id="hero" className="min-h-screen flex items-center px-6 md:px-16 lg:px-24 py-20">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
