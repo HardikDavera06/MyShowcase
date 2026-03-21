@@ -28,7 +28,7 @@ const ContactSection = () => {
             className="flex items-center gap-3 bg-card border border-border rounded-xl px-6 py-4 hover:shadow-lg transition-all"
           >
             <Mail className="w-5 h-5 text-primary" />
-            <span className="font-body text-sm">daverahardik43@gmail.com</span>
+            <span className="font-body text-sm">daverahardik5@gmail.com</span>
           </a>
           <a
             href="tel:+919106770262"
