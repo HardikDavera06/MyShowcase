@@ -15,10 +15,10 @@ const Index = () => {
       <Scene3D />
       <Navbar />
       <HeroSection />
+      <ExperienceSection />
       <ServicesSection />
       <ProjectsSection />
       <SkillsSection />
-      <ExperienceSection />
       <EducationSection />
       <ContactSection />
       <Footer />
