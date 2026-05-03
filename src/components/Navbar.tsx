@@ -53,16 +53,30 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-6 pb-4">
-          {navLinks.map((link) => (
-            <button
-              key={link.label}
-              onClick={() => { scrollToSection(link.href); setOpen(false); }}
-              className="block py-2 font-body text-sm text-muted-foreground hover:text-foreground w-full text-left"
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 pt-2 animate-fade-in">
+          <div className="flex flex-col gap-1">
+            {navLinks.map((link, i) => (
+              <button
+                key={link.label}
+                onClick={() => { scrollToSection(link.href); setOpen(false); }}
+                className="flex items-center gap-3 py-3 px-4 rounded-xl font-body text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all w-full text-left"
+                style={{ animationDelay: `${i * 50}ms` }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {link.label}
+              </button>
+            ))}
+          </div>
+          <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+            <a
+              href="./hardik_resume.pdf"
+              download="Hardik_Davera_Resume.pdf"
+              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-full font-display text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              {link.label}
-            </button>
-          ))}
+              Resume
+            </a>
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </nav>
