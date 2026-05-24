@@ -7,11 +7,11 @@ const experience = [
     company: "Flexgrew Technology",
     period: "July 2025 - Present",
     points: [
-      "Developing an ERP system for CNC/VMC manufacturing using Laravel and Vue.js",
-      "Contributed to a multi-tenant ERP system by implementing role-based features",
-      "Implemented core modules: production, inventory, sales, and purchase workflows",
-      "Designed RESTful APIs and optimized database queries for scalable performance",
-      "Built dynamic UI and delivered features aligned with real business requirements",
+      "Independently developed production-ready modules for a multi-tenant ERP platform using Laravel and Vue.js for CNC/VMC related industries.",
+      "Built a configurable Custom Import Module with dynamic field mapping, automated validation, and bulk data processing.",
+      "Developed complete HR management workflows.",
+      "Designed and developed Purchase Lifecycle from purchase module to stock batch.",
+      "Designed RESTful APIs and optimized MySQL queries for scalable application performance.",
     ],
   },
 ];
