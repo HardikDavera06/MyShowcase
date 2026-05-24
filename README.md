@@ -1,6 +1,6 @@
 # Hi, I'm Hardik Davera 👋
 
-### Junior Full-Stack Developer | Laravel & Vue.js Developer
+### PHP Developer | Laravel Developer
 
 I’m a passionate software developer with hands-on experience building **production-ready enterprise applications** using **Laravel, Vue.js, PHP, and MySQL**.
 
