@@ -1,73 +1,138 @@
-# Welcome to your Lovable project
+# Hi, I'm Hardik Davera 👋
 
-## Project info
+### Junior Full-Stack Developer | Laravel & Vue.js Developer
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+I’m a passionate software developer with hands-on experience building **production-ready enterprise applications** using **Laravel, Vue.js, PHP, and MySQL**.
 
-## How can I edit this code?
+Currently working on a **multi-tenant ERP platform for CNC/VMC related industries**, where I independently design and develop scalable business modules, optimize backend workflows, and implement real-world enterprise solutions.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 About Me
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- 💻 Working as **PHP Developer**
+- ⚙️ Building **Multi-Tenant ERP Systems**
+- 🔹 Strong in **Laravel, Vue.js, MySQL**
+- 🔹 REST API Development
+- 🔹 Backend Architecture & Database Design
+- 🔹 ERP Workflow Automation
+- 🔹 Performance Optimization
 
-Changes made via Lovable will be committed automatically to this repo.
+---
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+### Backend  
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![REST API](https://img.shields.io/badge/REST_API-02569B?style=for-the-badge)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend  
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Database  
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-Follow these steps:
+### State Management  
+![Pinia](https://img.shields.io/badge/Pinia-FFD859?style=for-the-badge&logo=pinia&logoColor=black)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Tools  
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 💼 Professional Experience
 
-# Step 3: Install the necessary dependencies.
-npm i
+### ERP Development at Flexgrew Technology (Current Work)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Working on a **multi-tenant ERP platform** for CNC/VMC manufacturing industries.
 
-**Edit a file directly in GitHub**
+Implemented:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Custom Import Module
+- Dynamic field mapping
+- Validation rules
+- Bulk data processing automation
 
-**Use GitHub Codespaces**
+### HR Management Workflow
+- Employee management
+- Department management
+- Designation management
+- Category management
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Purchase Lifecycle Workflow
+Automated complete purchase lifecycle:
 
-## What technologies are used for this project?
+Sales Order  
+→ Purchase Requisition  
+→ Purchase Order  
+→ GRN  
+→ Material QC  
+→ Stock Batch Update 
 
-This project is built with:
+### Backend Engineering
+- RESTful API design
+- MySQL query optimization
+- Production issue resolution
+- Feature enhancement delivery
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 📌 Featured Projects
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 1. E-Commerce Platform
 
-## Can I connect a custom domain to my Lovable project?
+A full-stack e-commerce solution built using Laravel and Vue.js.
 
-Yes, you can!
+### Features
+- Authentication & Authorization
+- Product Management
+- Stripe Payment Integration
+- REST APIs
+- State Management using Pinia
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Tech:** Laravel, Vue.js, MySQL, Pinia
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 2. Employee Management System
+
+A centralized employee management platform.
+
+### Features
+- CRUD Operations
+- Role-Based Access Control
+- Authentication System
+- Database Validation
+- Responsive UI
+
+**Tech:** PHP, MySQL, JavaScript, Bootstrap
+
+---
+
+## 📚 Currently Learning
+
+- Advanced Laravel Architecture
+- Queue & Scheduler Systems
+- System Design
+- Scalable SaaS Engineering
+- Cloud Concepts
+
+---
+
+## 🎯 Career Goal
+
+To grow as a **Backend / Full-Stack Software Engineer** and build scalable software products that solve real business problems.
+
+---
+
+## 📫 Connect With Me
+
+- **Email:** daverahardik5@gmail.com
+- **Location:** Rajkot, Gujarat, India
+
+---
+
+⭐ *Always learning, building, and improving.*
