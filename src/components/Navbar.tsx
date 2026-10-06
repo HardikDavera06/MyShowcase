@@ -38,8 +38,8 @@ const Navbar = () => {
             </button>
           ))}
           <a
-            href="./hardik_resume.pdf"
-            download="Hardik_Davera_Resume.pdf"
+            href="./Hardik_D_Resume.pdf"
+            download="Hardik_D_Resume.pdf"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-full font-display text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Resume
