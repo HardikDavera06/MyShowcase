@@ -9,13 +9,6 @@ const projects = [
     color: "bg-secondary",
     github: "https://github.com/HardikDavera06/TheEmployee.git",
   },
-  {
-    title: "Ecom",
-    desc: "Small e-commerce application with product catalog, cart handling, and Stripe payment integration for seamless checkout.",
-    tech: ["Vue.js", "Laravel", "MySQL"],
-    color: "bg-primary",
-    github: "https://github.com/HardikFlexgrew/LaraWithVue",
-  },
 ];
 
 const ProjectsSection = () => {
